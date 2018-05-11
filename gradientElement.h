@@ -7,7 +7,7 @@ class gradientElement
 public:
 
 	gradientElement(void);
-	gradientElement(double d): dist(d), volumeContribution(nullptr) { clearContributions(); }
+	gradientElement(double d) : dist(d), volumeContribution(nullptr) { clearContributions(); }
 	~gradientElement(void);
 
 	void normalize();
@@ -15,17 +15,18 @@ public:
 
 	// Simple for now -- in the future may not store all 27 (since most will have only 1 defined, and at most 8 are possible)
 	// but if it's never a memory or otherwise bottleneck, then it will remain this way
-	double getContribution(int whichCell) { 
-		if (volumeContribution == nullptr) { 
-			return 0.0; 
-		} else return volumeContribution[whichCell]; 
+	double getContribution(int whichCell) {
+		if (volumeContribution == nullptr) {
+			return 0.0;
+		}
+		else return volumeContribution[whichCell];
 	}
 
-	void   addContribution(int whichCell, double val) { 
+	void   addContribution(int whichCell, double val) {
 		if (volumeContribution == nullptr) {
 			clearContributions();
 		}
-		volumeContribution[whichCell] += val; 
+		volumeContribution[whichCell] += val;
 	}
 
 	int X() { return i; }

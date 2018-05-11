@@ -4,7 +4,7 @@
 #include <math.h>
 
 
-gradientElement::gradientElement(void): dist(-1.0)
+gradientElement::gradientElement(void) : dist(-1.0)
 {
 	volumeContribution = nullptr;
 }
@@ -13,7 +13,7 @@ gradientElement::gradientElement(void): dist(-1.0)
 gradientElement::~gradientElement(void)
 {
 	if (volumeContribution != nullptr) {
-	    delete[] volumeContribution;
+		delete[] volumeContribution;
 	}
 	volumeContribution = nullptr;
 }
